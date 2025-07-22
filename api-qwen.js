@@ -2,7 +2,7 @@
  * Отправляет текст на наш сервер
  */
 async function generateTestFromText(text) {
-    const SERVER_URL = 'https://test-generator-api.onrender.com/generate-test ';
+    const SERVER_URL = 'https://test-generator-api.onrender.com/generate-test';
 
     try {
         const response = await fetch(SERVER_URL, {
