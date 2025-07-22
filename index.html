@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Генератор тестов</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <header class="top-bar">
+      <h1>ТестГен</h1>
+
+      <!-- Скрытый файл инпут -->
+      <input
+        type="file"
+        id="file-input"
+        accept=".txt,.docx,.pdf"
+        style="display: none"
+      />
+
+      <!-- Красивая кнопка -->
+      <label for="file-input" class="custom-file-upload">
+        <i class="fas fa-upload"></i> Загрузить файл
+      </label>
+    </header>
+
+    <!-- SVG Прогресс бар -->
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div id="progress-text">0 / 0</div>
+
+    <!-- ОСНОВНАЯ ЗОНА -->
+     
+    <main class="container">
+      <div id="questions-container">
+        <!-- Здесь будут появляться вопросы -->
+      </div>
+    </main>
+
+    <!-- JS -->
+<script src="script-cards.js"></script>
+<script src="script-main.js"></script>
+<script src="api-qwen.js"></script>
+<script src="script-pdf.js"></script>
+     <!-- <script src="scriptpallet.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js "></script>
+
+   
+  </body>
+</html>
+
+
+<!--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-->>

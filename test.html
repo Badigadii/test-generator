@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Qwen-3 через OpenRouter</title>
+</head>
+<body>
+    <h2>Спроси Qwen-3 что-нибудь</h2>
+    <textarea id="user-input" rows="5" cols="50" placeholder="Введите ваш вопрос..."></textarea><br><br>
+    <button onclick="askQwen()">Отправить</button>
+    <pre id="qwen-response">Здесь будет ответ</pre>
+
+    <script>
+        async function askQwen() {
+            const API_KEY = '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';
+            const input = document.getElementById('user-input').value;
+            const output = document.getElementById('qwen-response');
+            output.textContent = 'Загрузка...';
+
+            try {
+                const response = await fetch('https://openrouter.ai/api/v1/chat/completions ', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${API_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: 'qwen/qwen3-32b', // Используем Qwen-3
+                        messages: [
+                            { role: 'user', content: input }
+                        ]
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    output.textContent = 'Ошибка: ' + errorText;
+                    return;
+                }
+
+                const data = await response.json();
+                const answer = data.choices[0].message.content;
+                output.textContent = answer;
+
+            } catch (error) {
+                output.textContent = 'Произошла ошибка: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

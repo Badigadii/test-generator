@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    padding-top: 70px;
+}
+
+/* Верхняя панель */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.top-bar h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.top-bar input[type="file"] {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+/* Основной контент */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Прогресс бар */
+.progress-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    height: 12px;
+    background-color: #dcdcdc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00c9ff, #92fe9d);
+    transition: width 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+#progress-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Карточки вопросов */
+.question-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+    transform: translateY(-4px);
+}
+
+.question-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.question-card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.question-card input[type="text"] {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.correct-answer {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    color: #2e7d32;
+    font-weight: bold;
+    border-radius: 6px;
+    display: none; /* Скрываем по умолчанию */
+}
+.wrong-answer {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #f18686;
+    border-left: 4px solid #ca1616;
+    color: #7d2e2e;
+    font-weight: bold;
+    border-radius: 6px;
+    display: none; /* Скрываем по умолчанию */
+}
+
+.submit-test-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-test-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Стили для кнопки загрузки файла */
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: #3476CB;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Иконка внутри кнопки */
+.custom-file-upload i {
+    margin-right: 8px;
+}
+
+/* Эффект при наведении */
+.custom-file-upload:hover {
+    background-color: #2a63b5;
+    transform: translateY(-2px);
+}
+
+/* Активное состояние */
+.custom-file-upload:active {
+    transform: scale(0.98);
+}
+
+
+
+
+
+/* Прогресс-бар для загрузки файла */
+.upload-progress {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #007BFF;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#upload-progress-text {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
