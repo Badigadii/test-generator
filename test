@@ -1,0 +1,12 @@
+test 
+const testQuestions = [ {
+    "type": "single_choice",
+    "question": "Какой язык используется для стилизации веб-страниц?",
+    "options": ["HTML", "JavaScript", "CSS", "Python"],
+    "correct_answer": "CSS",
+    "explanation": "CSS отвечает за внешний вид сайта — цвета, шрифты, макет."
+  } ];
+renderQuestionCards(testQuestions);
+script-main.js:23 🎯 Отрендерено 1 валидных вопросов из 1
+undefined
+script-cards.js:148 Значение: Python
